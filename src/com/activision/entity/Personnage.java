@@ -2,75 +2,102 @@ package com.activision.entity;
 
 public abstract class Personnage {
 
-	// ----------------------------------------
-	// attributs
-	// ----------------------------------------
+    // ----------------------------------------
+    // Attributs
+    // ----------------------------------------
+    private String nom;   // pas vide
+    private int hp;       // varie entre 0 et 100
+    private int level;    // varie entre 0 et 30 pour tous
 
-	private String nom; // pas vide
-	private int hp; // varie entre 0 et 100
-	private int level; // varie entre 0 et 30 pour tous
-	// private double jauge;
+    // ---------------------------------------------------------
+    // Constructeurs
+    // ---------------------------------------------------------
 
-	// ---------------------------------------------------------
-	// Constructeur = initilisation des attributs d'instance
-	// -------------	-------------------------------------------- 
-	// constructeur par défaut (vide)
+    // Constructeur par défaut
+    public Personnage() {
+    }
 
-	public Personnage() {
+    // Constructeur avec paramètres
+    public Personnage(String nomRempli, int hpRempli, int levelRempli) {
+        this.setNom(nomRempli);
+        this.setHp(hpRempli);
+        this.setLevel(levelRempli);
+    }
 
-	}
+    // --------------------------------------------------------------------------
+    // Getters et Setters
+    // --------------------------------------------------------------------------
 
-	public Personnage(String nomRempli, int hpRempli, int levelRempli) {
-		this.setNom(nomRempli);
-		this.setHp(hpRempli);
-		this.setLevel(levelRempli);
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	// --------------------------------------------------------------------------
-	// GETTERS ET SETTERS accéder aux attributs et de modifier  
-	// --------------------------------------------------------------------------
+    public int getHp() {
+        return hp;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public int getLevel() {
+        return level;
+    }
 
-	public int getHp() {
-		return hp;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public void setHp(int hp) {
+        // bornes : min 0, max 100
+        if (hp < 0) {
+            this.hp = 0;
+        } else if (hp > 100) {
+            this.hp = 100;
+        } else {
+            this.hp = hp;
+        }
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public void setLevel(int level) {
+        // bornes : min 0, max 30
+        if (level < 0) {
+            this.level = 0;
+        } else if (level > 30) {
+            this.level = 30;
+        } else {
+            this.level = level;
+        }
+    }
 
-	public void setHp(int hp) {
-		this.hp = hp;
-	}
+    // --------------------------------------------------------------------------
+    // Méthodes métier
+    // --------------------------------------------------------------------------
 
-	public void setLevel(int level) {
-		this.level = level;
-	}
+    public abstract void attaquer(Personnage ennemi);
 
-	// --------------------------------------------------------------------------
-	// Méthodes métier 
-	// --------------------------------------------------------------------------
+    public abstract void defendre();
 
-	public abstract void attaquer(Personnage ennemi);
-	
-	public abstract void defendre();
+    // Tous les personnages peuvent subir des dégâts
+    public void subirDegats(int degats) {
+        this.hp -= degats;
+        if (this.hp < 0) {
+            this.hp = 0; // empêche d’avoir des HP négatifs
+        }
+        System.out.println(this.nom + " subit " + degats + " dégâts ! HP restants : " + this.hp);
+    }
 
-	// --------------------------------------------------------------------------
-	// toString pour décrire
-	// --------------------------------------------------------------------------
+    // Tous les personnages peuvent être soignés
+    public void soigner(int soin) {
+        this.hp += soin;
+        if (this.hp > 100) {
+            this.hp = 100; // limite max
+        }
+        System.out.println(this.nom + " récupère " + soin + " HP ! HP actuels : " + this.hp);
+    }
 
-	@Override
-	// redéfinir la méthode pour qu'elle puisse m'(afficher le contenu des attributs initialisés
-	public String toString() {
-		// TODO Auto-generated method stub
-		return " [nom:hp:level] " + this.nom + ":" + this.hp + ":" + this.level;
-	}
+    // --------------------------------------------------------------------------
+    // toString
+    // --------------------------------------------------------------------------
 
+    @Override
+    public String toString() {
+        return " [nom:hp:level] " + this.nom + ":" + this.hp + ":" + this.level;
+    }
 }

@@ -7,7 +7,7 @@ import java.util.Vector;
 public class Voleurs {
 	
 	
-	// attributs pricipal de la classe 
+	// attributs principal de la classe 
 	
 	//List<Voleur> voleurs = new ArrayList();
 	
