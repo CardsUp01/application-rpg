@@ -14,9 +14,9 @@ public class Archers {
 	//Constructeur
 	
 	public Archers() {
-		archers.add(new Archer("Archer1",23,0 ));
-		archers.add(new Archer("Archer2",23,0 ));
-		archers.add(new Archer("Archer3",23,0 ));
+		archers.add(new Archer("Artemis",35,5));
+		archers.add(new Archer("Katniss",30,8));
+		archers.add(new Archer("Oliver",40,3));
 	}
 
 	// méthodes pour la logique métier Service qui le métier Larcher

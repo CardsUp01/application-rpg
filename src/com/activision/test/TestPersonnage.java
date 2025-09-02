@@ -8,7 +8,7 @@ public class TestPersonnage {
 		// création d'une instance de la classe Personnage
 		
 		
-		Personnage p1 = new Personnage();
+		Personnage p1 = new Personnage(); 
 
 	}
 

@@ -14,9 +14,9 @@ public class Guerriers {
 		// contructeurs
 		
 		public Guerriers() {
-			guerriers.add(new Guerrier("Guerrier 1",23,0 ));
-			guerriers.add(new Guerrier("Robin des bois",23,0 ));
-			guerriers.add(new Guerrier("Petit Jean",23,0 ));
+			guerriers.add(new Guerrier("Thor", 90, 25));
+			guerriers.add(new Guerrier("Achille", 85, 20));
+			guerriers.add(new Guerrier("Leonidas", 80, 30));
 		}
 		
 		// méthodes pour la logique métier Service qui le métier voleur
@@ -30,11 +30,11 @@ public class Guerriers {
 		}
 		
 		
-		public void removeVoleur(Guerrier g) {
+		public void removeGuerrier(Guerrier g) {
 			guerriers.remove(g);
 		}
 		
-		public void displayVoleurs() {
+		public void displayGuerriers() {
 			for(Guerrier g: guerriers) {
 				System.out.println(g);
 			}
