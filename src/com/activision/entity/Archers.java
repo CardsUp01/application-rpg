@@ -1,6 +1,5 @@
 package com.activision.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -11,14 +10,14 @@ public class Archers {
 	
 	//List<Archer> archers = new ArrayList();
 	
-	List<Archer> archers = new Vector();
+	List<Archer> archers = new Vector<Archer>();
 	
 	// contructeurs
 	
 	public Archers() {
-		archers.add(new Archer("Robin des bois",23,0 ));
-		archers.add(new Archer("Legolas",23,0 ));
-		archers.add(new Archer("Hawkeye",23,0 ));
+		archers.add(new Archer("Artemis",35,5 ));
+		archers.add(new Archer("Katniss",30,8 ));
+		archers.add(new Archer("Oliver",40,3 ));
 	}
 	
 	// méthodes pour la logique métier Service qui le métier archer

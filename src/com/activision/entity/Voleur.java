@@ -15,9 +15,13 @@ public class Voleur extends Personnage{
 	public Voleur(String nomRempli, int hpRempli, int levelRempli) {
 		super(nomRempli, hpRempli, levelRempli);
 		// spécialisation du personnage de type Voleur
-		//this.bourse = bourse;
+		this.bourse = 10; // Initialisation de la bourse
 	}
 	
+	// Getter pour la bourse
+	public int getBourse() {
+		return bourse;
+	}
 	
 	@Override
 	public void setHp(int hp) {
@@ -36,8 +40,9 @@ public class Voleur extends Personnage{
 
 	@Override
 	public void defendre() {
-		// TODO Auto-generated method stub
-		
+		// Défense simple: récupère 1 HP et augmente la bourse
+		setHp(getHp() + 1);
+		bourse += 1;
 	}
 	
 	//création d'une méthode sans passer par l'instance qui fait combattre un personnage contre autre

@@ -86,6 +86,9 @@ public class PersonnageTest {
 		default:
 			break;
 		}
+		
+		// Fermeture du Scanner pour éviter la fuite de ressource
+		sc.close();
 
 	}
 

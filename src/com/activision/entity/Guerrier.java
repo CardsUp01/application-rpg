@@ -1,6 +1,6 @@
 package com.activision.entity;
 
-public class Guerrier extends Personnage{
+public class Guerrier extends Personnage {
 
 	public Guerrier(String nom, int hp, int level) {
 		super(nom, hp, level);
@@ -8,14 +8,13 @@ public class Guerrier extends Personnage{
 
 	@Override
 	public void attaquer(Personnage ennemi) {
-		// TODO Auto-generated method stub
-		
+		// Attaque simple: 5 dégâts
+		ennemi.setHp(ennemi.getHp() - 5);
 	}
 
 	@Override
 	public void defendre() {
-		// TODO Auto-generated method stub
-		
+		// Défense simple: récupère 2 HP
+		setHp(getHp() + 2);
 	}
-
 }

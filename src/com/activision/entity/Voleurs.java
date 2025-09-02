@@ -1,6 +1,5 @@
 package com.activision.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -11,14 +10,14 @@ public class Voleurs {
 	
 	//List<Voleur> voleurs = new ArrayList();
 	
-	List<Voleur> voleurs = new Vector();
+	List<Voleur> voleurs = new Vector<Voleur>();
 	
 	// contructeurs
 	
 	public Voleurs() {
-		voleurs.add(new Voleur("Arsen Lupin",23,0 ));
-		voleurs.add(new Voleur("Robin des bois",23,0 ));
-		voleurs.add(new Voleur("Petit Jean",23,0 ));
+		voleurs.add(new Voleur("Ezio",45,12 ));
+		voleurs.add(new Voleur("Altair",40,15 ));
+		voleurs.add(new Voleur("Garrett",38,18 ));
 	}
 	
 	// méthodes pour la logique métier Service qui le métier voleur

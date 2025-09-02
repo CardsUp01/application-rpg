@@ -67,9 +67,8 @@ public abstract class Personnage {
 	// --------------------------------------------------------------------------
 
 	@Override
-	// redéfinir la méthode pour qu'elle puisse m'(afficher le contenu des attributs initialisés
+	// redéfinir la méthode pour qu'elle puisse m'afficher le contenu des attributs initialisés
 	public String toString() {
-		// TODO Auto-generated method stub
 		return " [nom:hp:level] " + this.nom + ":" + this.hp + ":" + this.level;
 	}
 

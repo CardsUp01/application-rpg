@@ -40,7 +40,9 @@ public class Archer extends Personnage {
 
 	@Override
 	public void defendre() {
-		// TODO: Implémenter la défense
+		// Défense: recul tactique, récupère 1 HP et gagne une flèche
+		setHp(getHp() + 1);
+		fleches += 1;
 	}
 	
 	// Méthode statique de combat
